@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+	<head> </head>
+	<body> </body>
+</html>
+
+<head>
+	<title> My Portfolio</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+	<style type="text/css">
+	section:before{
+		height: 54px;
+		content: "";
+		display: block;
+	}
+	section{
+		min-height: 100vh;
+	}
+	
+	#section-showcase{
+  background-image: url(.images1/video.mp4); 
+  background-size: cover;
+  }
+
+
+  	.carousel-control-prev-icon,
+  	.carousel-control-next-icon{
+  		filter: invert(100%);
+  	}
+
+	#more {display: none;}
+	
+	img.resize {
+ 		width:800px;
+  		height:500px;
+
+	}
+	.overlay {
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:1;
+	}
+
+	.center {
+  	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+  	width: 50%;
+	}
+
+	.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+	}
+
+	.title {
+  	color: grey;
+  	font-size: 18px;
+	}
+
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+	html{
+		scroll-behavior: smooth;
+	}
+
+	.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #A9A9A9;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #000;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #000;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+ul {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+}
+
+
+</style>
+</head>
+
+<body>
+
+<!--NAVAGATION BAR-->
+	<nav id= "top-navbar" class='navbar fixed-top navbar-expand-lg navbar-dark bg-dark'> 
+		<a class='navbar-brand' href="#section-showcase"><strong>Jack Collins' Portfolio</strong></a>
+		<button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#menu'>
+			<span class='navbar-toggler-icon'></span>
+		</button>
+		<div class='collapse navbar-collapse' id='menu'>
+		<ul class='nav navbar-nav ml-auto'>
+			<li class='nav-item'> 
+				<a class='nav-link' href="#section-home"> Home </a> 
+			</li>
+			<li class='nav-item'> 
+				<a class='nav-link' href="#section-about"> About </a> 
+			</li>
+			<li class='nav-item'> 
+				<a class='nav-link' href="#section-projects">  Projects </a> 
+			</li>
+			<li class='nav-item'> 
+				<a class='nav-link' href="#section-blog">  Blog </a> 
+			</li>
+			<li class='nav-item'> 
+				<a class='nav-link' href="#section-contact">  Contact </a> 
+			</li>
+		</ul>
+	</div>
+</nav>
+ 
+<!--JUMBOTRON-->
+<div class="section">
+			<h1> Jack Collins' Portfolio </h1>
+	<div class="video-container">
+	<video autoplay loop muted>
+		<source src="images1/video.mp4" type="video/mp4">
+			</video>
+		</div>
+	</div>
+</section>
+<div class='container-fluid'>
+
+
+<!--ABOUT SECTION-->
+<section id="section-about" class='bg-white container-fluid'> 
+	<h1 class='text-center'>About me</h1>
+<p class='text-center'>Click on the buttons to expand:</p>
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Programming Tools')">Programming Tools</button>
+  <button class="tablinks" onclick="openCity(event, 'Version Control & Deployment tools')">Version Control & Deployment tools</button>
+  <button class="tablinks" onclick="openCity(event, 'About Me')">About Me</button>
+</div>
+
+<div id="Programming Tools" class="tabcontent">
+  <h3>Programming Tools:</h3>
+  <p>Java, Javascript, HTML, C.</p>
+</div>
+
+<div id="Version Control & Deployment tools" class="tabcontent">
+  <h3>Version Control & Deployment tools:</h3>
+  <p>git, github, gitlab</p> 
+</div>
+
+<div id="About Me" class="tabcontent">
+  <h3>About Me:</h3>
+  <p>I am a Junior at the University of New Orleans, 
+        I am majoring in computer science and hoping to get an internship soon so that I can gain experience as a software developer.</p>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+
+
+
+<!--PROJECTS-->
+	<section id="section-projects" class='bg-dark container-fluid'>
+	<h1 class='text-center text-white'> Projects </h1>
+	<h5 class='text-center text-white'> Here are a few computer science projects I have done during my time at The University of New Orleans. </h5>
+	<hr>
+	<div class='container'>
+      <div id="projects" class='card-deck text-center'>
+        <a class='card bg-dark btn' href='https://github.com/jack-collins98/data-structures-project' target="_blank">
+          <div class='card-header'>
+            <p class ='text-light'>Data Structures Project</p>
+          </div>
+          <img class='card-img-top' src='images1/java.png' alt="Avatar">
+          <div class='card-body'>
+            <h4 class='card-title text-light'> Binary Search Tree</h4>
+          </div>
+          <div class='card-footer'> 
+            <small class='text-muted'>by Jack Collins</small>
+          </div>
+        </a>
+        <a class='card bg-dark btn' href='https://github.com/jack-collins98/data-structures-project/tree/master/homework_5' target="_blank">
+          <div class='card-header'>
+            <p class ='text-light'>Data Structures Project</p>
+          </div>
+          <img class='card-img-top' src='images1/java.png'>
+          <div class='card-body'>
+            <h4 class='card-title text-light'> Linked List</h4>
+          </div>
+          <div class='card-footer'> 
+            <small class='text-muted'>by Jack Collins</small>
+          </div>
+        </a>
+         <a class='card bg-dark btn' href="quizApp/index.html" target="_blank">
+          <div class='card-header'>
+            <p class ='text-light'>JavaScript Web App</p>
+          </div>
+          <img class='card-img-top' src='images1/covid.png' alt="Avatar">
+          <div class='card-body'>
+            <h4 class='card-title text-light'> Coronavirus Quiz</h4>
+          </div>
+          <div class='card-footer'> 
+            <small class='text-muted'>by Jack Collins</small>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+<!-- BLOG POSTS -->
+	<section id="section-blog" class='bg-yellow pb-1 container-fluid''>
+		<h1 class='text-center text-black'>Blogs</h1>
+		
+	<div id="demo" class="carousel slide" data-ride="carousel">
+		<!--Indicatirs Start -->
+		<ul class="carousel-indicators">
+		<li data-target="#demo" data-slide-to="0" class="active"></li>
+		<li data-target="#demo" data-slide-to="1"></li>
+		<li data-target="#demo" data-slide-to="2"></li>
+	</ul>
+	<!--slide show start -->
+	<div class="carousel-inner">
+		<div class="carousel-item active">
+			<img class="resize center" src="images1/chalkboard.jpg" alt="text">
+			<div class="carousel-caption d-none d-md-block">
+				<a class='text-white' href="blog2/post2.html">Computer Science Blog</a>
+				<p>How I made my portfolio page</p>
+			</div>
+		</div>
+		<div class="carousel-item">
+			<img class="resize center" src="images1/drew-brees-saints-qb.jpg" alt="text">
+			<div class="carousel-caption d-none d-md-block">
+				<a class='text-white' href="blog1/post.html"> Sports Blog </a>
+				<p> What Sould the saints do with Drew Brees? </p>
+			</div>
+		</div><div class="carousel-item">
+			<img class="resize center" src="images1/slide.jpeg" alt="text">
+			<div class="carousel-caption d-none d-md-block">
+				<h3 class='text-center'> More Blog Posts Coming Soon </h3>
+		</div>
+	</div>
+	<!--controlls start-->
+	<a class="carousel-control-prev" href="#demo" data-slide="prev">
+		<span class="carousel-control-prev-icon"></span>
+	</a>
+	<a class="carousel-control-next" href="#demo" data-slide="next">
+		<span class="carousel-control-next-icon"></span>
+	</a>
+	<hr>
+</div>
+</section>
+
+
+<!--CONTACT/INFO -->
+
+<section id="section-contact" class='bg-dark container-fluid'> 
+		<h1 class="text-center text-white">Contact</h1>
+		<hr>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<div class="card">
+  	<img src="images1/me.jpeg" alt="John" class="center" style="width:50%">
+  <h1>Jack Collins</h1>
+  <p class="title">Computer Science</p>
+  <p>University of New Orleans</p>
+  <p> Email: jacolli4@uno.edu</p>
+  <a href="https://www.linkedin.com/in/jack-collins-02b2431a3/"><i class="fa fa-linkedin"></i></a>
+  <a href="https://github.com/jack-collins98"><i class="fa fa-github"></i></a>
+  <p class="text-center"><button>Contact</button></p>
+	</div>
+</section>
+
+	<footer class='bg-light'>
+	<div class='container text-muted text-centered'>
+	<p>Copyright &copy; 2020 Jack Collins</p>
+	</footer>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
