@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <style>
+            div.a{
+                text-align: left;
+            }
+
+        </style>
+    
+        <link href="https://fonts.googleapis.com/css?family=Bangers&display=swap"
+    rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Caveat&display=swap"
+    rel="stylesheet">
+        <link href='blog.css' rel="stylesheet"  type="text/css">
+    </head>
+    <body>
+        <nav id='navbar'>
+            <ul class='bg-dark'>
+                <li class='nav-item'> <a href='../index.html'> Home </a> </li>
+            </ul>
+        </nav>
+        <h1 class='title'> How I Created My JavaScript Web Application </h1>
+
+        <img class='img-fluid' src="https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Libraries/Production+Library/31-01-20-coronavirus-digital-image-cdc1.jpg/image1440x560cropped.jpg">
+        <small class='subtitle'>April 3rd, 2020 </small>
+
+        <div class='container'>
+
+        <h3>Intro</h3>
+        <p class='text-black'>
+            For my second blog post, I am going to take you through the process of how I designed my Javascript web application. The purpose of this application is to determine if you have the coronavirus based off of the questions provided. There are 4 total questions, each one asking if you have a certain symptom related to the coronavirus.
+        </p>
+
+        <p class='text-black'>
+           If the users answers are all 'yes' for the 4 questions, then the app returns the result that the user has the virus.  If the user answers 'yes' to 3 out of the 4 questions, then the app returns the result that the user 'most likely' has the virus.  That pattern continues for the other 3 possible outcomes. 
+        </p>
+
+    
+
+        <img class='center' src="images/quizSteps.PNG">
+        <h3 class='text-black'>Quiz Steps</h3>
+        <p class='text-black'>
+            When taking the quiz each question has a value that is added to the variable 'totalScore.' The end results are depended upon what the final calculation of the totalScore is.  Once the last question has been answered, the function calcResults() is updated and the array resultOptions displays the correct index.  
+        </p>
+        <p class='text-black'>
+            I also changed the background color of the section to a background image instead of a plain color and added a navbar that can return the user back to the portfolio page.  I also added photos with each different result so that there is a better presentation to the results.  
+        <img class='center' src="images/calcResults.PNG">
+        <h3 class='text-black'>CalcResults Function</h3>
+        
+
+        <img class='center' src="images/array.PNG">
+        <h3 class='text-black'>ResultOptions Array</h3>
+        <p class='text-black'>
+           The array 'resultOptions' holds the data that is displayed at the end of the quiz based on the given input from the user.  Each index holds a title and description.  The title gives the result while the description gives a comment and a photo to go along each result.
+        </p>
+
+    </div>
+        <hr>
+
+        <h3>About me</h3>
+        <img class='thumbnail' src='images/me.jpeg'>
+        <h4 id='my-name' My Name</h4>
+        <div class="a">
+            <p>Jack Collins </p>
+            <p>The University of New Orleans</p>
+            <p> Email: jacolli4@uno.edu</p>
+        </div>
+    </body>
+</html>
